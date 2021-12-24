@@ -1,0 +1,239 @@
+/* common */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);     
+}
+
+ul{
+    list-style: none;
+}
+
+input{
+    outline: none;
+    border: 0;
+    background: none;
+}
+
+select,button{
+    outline: none;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.todo-container{
+    width: 90%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* header section */
+.title{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.warning{
+    display: none;
+    margin-top: 10px;
+    font-size: 15px;
+    color: rgb(173, 0, 0);
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.input-wrapper{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(190, 190, 190);
+}
+
+.input-wrapper:nth-child(1){
+    flex: 1;
+}
+
+.input-field{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.add-btn, .close-btn{
+    padding: 5px;
+    color: #fff;
+    background-color: royalblue;
+}
+
+#filter-section{
+    font-size: 15px;
+    padding: 3px 10px;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+/* main section */
+#todo-list{
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#todo-list::-webkit-scrollbar{
+    width: 0;
+}
+
+.empty-todo-list-message{
+    display: block;
+    width: 100%;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.todo-item{
+    margin-top: 20px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+#completed-checkbox{
+    position: relative;
+    margin-right: 20px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    appearance: none;
+}
+
+#completed-checkbox::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+#completed-checkbox:checked:before{
+    content: '✔';
+    font-size: 17px;
+    color: #fff;
+    background-color: rgb(3, 187, 83);
+}
+
+.todo-item-left-container{
+    flex: 1;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.todo-item-value{
+    flex: 1;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.todo-item-right-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+#edit-btn{
+    padding: 5px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(221, 126, 18);
+}
+
+#delete-btn{
+    padding: 5px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: rgb(216, 17, 17);
+}
+
+/* footer section*/
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.complete-all-todo-btn, .clear-all-btn{
+    width: 100px;
+    margin-top: 10px;
+    padding: 10px 0px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: royalblue;
+}
+
+@media screen and (min-width: 375px){
+    #todo-list{
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 425px){
+    .todo-item{
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .input-container{
+        flex-direction: row;
+    }
+
+    footer{
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .todo-container{
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .todo-container{
+        width: 40%;
+    }
+}

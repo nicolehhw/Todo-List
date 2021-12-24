@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <div class="todo-container">
+        <header>
+            <h3 class="title">Todo List</span>
+            <span class="warning">Input can not be empty!</span>
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <input class="input-field add-todo-input" type="text" placeholder="Enter something">
+                        <button type="button" class="material-icons add-btn" onclick="addTodoItem()">add</button>
+                    </div>
+                    <div class="input-wrapper">
+                        <input class="input-field search-input" type="text" placeholder="search" oninput="searchTodoItem()">
+                        <button type="button" class="material-icons close-btn" onclick="clearSearchText()">close</button>
+                    </div>
+                </div>
+                <select id="filter-section" onchange="filter()">
+                    <option value="all" selected>All</option>
+                    <option value="completed">completed</option>
+                    <option value="inProgress">in progress</option>
+                </select>
+        </header>
+
+        <main>
+            <ul id="todo-list">
+                <span class="empty-todo-list-message">Todo List Is Empty</span>
+            </ul>
+        </main>
+
+        <footer>
+            <span class="todo-item-number">Total todo item: 0</span>
+            <div class="button-wrapper">
+                <button class="complete-all-todo-btn" type="button" onclick="completeAllTodo()">All Done</button>
+                <button class="clear-all-btn" type="button" onclick="deleteAllTodo()">Clear All</button>
+            </div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
